@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "jquery Validation addMethod()"
-date:   2014-11-30 14:34:25
-categories: jquery-validation feature
-tags: featured
+date:   2015-01-29 12:34:25
+categories:
+tags: jquery-validation
 #image:
 published: true
 ---
