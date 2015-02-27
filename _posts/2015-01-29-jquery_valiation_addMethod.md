@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jquery Validation addMethod()"
+title:  "jQuery Validation addMethod()"
 date:   2015-01-29 12:34:25
 categories:
 tags: jquery-validation
@@ -8,19 +8,20 @@ tags: jquery-validation
 published: true
 ---
 
-#An example of addMethod()
+I wrote a few jQuery plugins for form validation in the past, most of them provided the same functions, and varied a bit depends on the projects.
+jQuery validation covers many of the common usages, for anything else there's an addMethod() to provide my own form validation.
 
-In a use case where I have to compare an input with another input,
-jQuery Validation Plugin provides a helper method `addMethod` to write my own validator.
 
-Example:
-I created a form to ask user to enter his/her current age and retirement age, and retirement age must be greater current age.
+#custom validation with addMethod()
 
-See [addMethod notation](http://jqueryvalidation.org/jQuery.validator.addMethod/).
+In a project, I have an input form to make sure the user enters his/her retirement age must be greater than his current age.
+
+[See addMethod notation](http://jqueryvalidation.org/jQuery.validator.addMethod/).
 
 [Demo](http://jsbin.com/covawaboxi/1/edit?html,js,output)
 
 (for brevity, I stripped all the unnecessary html attributes)
+
 
 ```html
 <form>
@@ -36,46 +37,35 @@ See [addMethod notation](http://jqueryvalidation.org/jQuery.validator.addMethod/
 ```javascript
 $.validator.addMethod('greaterThan',
     function(value, element, params){
-        // It must returns a true or false.
-        // A false value will invokes error message
-        return value > $(params).val();
+        return value > $(params).val();  // It must returns a boolean, true: passed or false: failed.
     },
-    // default error message
-    'The age when payments begin must be greater than the current age. ');
+    'The age when payments begin must be greater than the current age. ');  // default error message
 
 
 var validationConfigs = {
     rules: {
-
-      ageAtRetirement : {  // input name attribute
-        name of the method created above, and `#age` is id of the input field `age`
-        greaterThan : '#age'
+      ageAtRetirement : {  // input's attribute name
+        greaterThan : '#age' // greaterThan: is the name of the method, #age: if the inputs to compare
       }
     },
-    // customize error messages
+    // customize error message
     messages: {
-      ageAtRetirement : { // for ageAtRequirement input
-        // error message when retirement age is smaller than current age
+      ageAtRetirement : {
         greaterThan : 'Retirement age must be greater than current age'
       }
     }
   };
 
-// to run **Validation** with the rules above,
-// pass the configs object `validationConfigs` in the `validate()` param
 $('form').validate(validationConfigs);
 ```
 
+#validate onfocusout, onkeyup, onsubmit...
 
+What about if I want to validate an input field as soon user moves to the next input field (onfocusout)? Or validate characters while user's typing?
+jQuery Validation supports these events, it can be easily configured in the object like the example below.
 
-# Bonus: validate input value on blur, and add classnames
-
-Validation has many other events: **onsubmit, onfocusout**,etc. These events are configurable in the similar fashion as `rules` above.
-To validate an input as soon user moves away from the input field, add `onfocusout` method, and use `element()` method to validate the
-that input.
 
 ```javascript
-
 var validationConfigs = {
     onfocusout: function onfocusout(input, event){
         this.element(input);
@@ -87,8 +77,35 @@ var validationConfigs = {
 
 [Demo](http://jsbin.com/jiqidoruja/1/edit)
 
-For other things such adding my own classnames for errors or valid inputs,
-see `errorClass`, `validClass`, `highlight`, `unhighlight`, `errorPlacement` on this page <http://jqueryvalidation.org/validate/>
+
+#Error message placement, add or remove classes
+
+
+`highlight`: it's being used to add error classes etc. an input failed validation
+`unhighlight`: when an input passed validation, use this method to remove previous error classes
+`errorPlacement`:
+
+```javascript
+var validationConfigs = {
+      highlight: function(element, errorClass, validClass) {
+        $(element)
+          .closest('.form-group')
+          .addClass('has-error');
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element)
+          .closest('.form-group')
+          .removeClass('has-error');
+      },
+      errorPlacement: function(error, element) {
+        var $element = $(element);
+        $element.parent().append(error);
+      }
+   }
+};
+```
+
+See docs: <http://jqueryvalidation.org/validate/>
 
 
 
