@@ -13,7 +13,7 @@ and SVN came with WebStorm on Mac OS X is a lot older than that version, so I ca
 I ran into this several times while helping other developer to setup their dev environment. 
 So this post should saves me time in the future :)  
 
-1. Go to (https://www.wandisco.com/subversion/os/downloads)[Wandisco], download the binary package for right SVN version
+1. Go to [Wandisco](https://www.wandisco.com/subversion/os/downloads), download the binary package for right SVN version
 2. Install it
 3. Change SVN path in Webstorm to the newly installed SVN
-![Webstorm SVN](assets/images/svn-webstorm.png)
+![Webstorm SVN](assets/article_images/svn-webstorm.png)
