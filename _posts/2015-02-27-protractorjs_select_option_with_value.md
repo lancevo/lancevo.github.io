@@ -19,7 +19,7 @@ Here's how:
     2. compare each option value with the value you want to choose
     3. if it matches, then click that element
 
-Simple Right? Let put it code:
+Simple Right? Let put it in code:
 
 ```
 function selectOptionByValue(elementFinder, value) {
