@@ -2,8 +2,8 @@
 layout: post
 title:  "Set up LAMP in Ubuntu"
 date:   2014-08-29 14:34:25
-categories: ubuntu apache
-tags: featured
+categories: 
+tags: ubuntu, apache, lamp
 published: true
 image: 
 ---
