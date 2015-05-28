@@ -16,4 +16,4 @@ So this post should saves me time in the future :)
 1. Go to [Wandisco](https://www.wandisco.com/subversion/os/downloads), download the binary package for right SVN version
 2. Install it
 3. Change SVN path in Webstorm to the newly installed SVN
-![Webstorm SVN](assets/article_images/svn-webstorm.png)
+![Webstorm SVN](/assets/article_images/svn-webstorm.png)
