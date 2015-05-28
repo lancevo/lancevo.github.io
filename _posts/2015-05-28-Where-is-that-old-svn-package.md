@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Where is the old svn package for mac?"
+title:  "Where is that old svn package for Mac OS X?"
 date:   2015-05-28 12:18:00
 categories: 
 tags: svn, webstorm
