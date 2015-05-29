@@ -8,7 +8,7 @@ image:
 published: true
 ---
 
-A quick snippet of CSS to scale background image, and seems to work pretty well. The trick is using `padding-top:<ratio of width/height>%`.
+A quick snippet of CSS to scale background image, and seems to work pretty well. The trick is using `padding-top:<ratio of height/width>%`.
 Since my images are square so its ratio is 100%;
 
 ```css
