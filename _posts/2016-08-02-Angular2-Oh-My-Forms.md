@@ -8,7 +8,7 @@ tags: angular2
 published: true
 ---
 
-Below is a list of issues that I ran into with form while using Angular 2 Release Candidate 4. 
+Below is a list of things that I ran into with form while using Angular 2 Release Candidate 4. 
 There are things that you may find obvious, but not documented any on official angular documents make it difficult.
 
 I have a form allow user to enter information such as age, etc... In the form, it allows user to enter an age either in `input[type=text]`
@@ -81,7 +81,7 @@ export class App {
 ```
 
 ### Is there a way to validate all inputs? 
-When a form is submitted, all inputs must re-validated. I couldn't find a convenient method in `FormGroup` or `FormBuilder` to do his. However, there's a way to get around that with `FormControl`.
+When the form is submitted, all inputs must re-validated. I couldn't find a convenient method in `FormGroup` or `FormBuilder` to do this. However, there's a way to get around it with `FormControl`.
 
 1. `updateValueAndValidity({onlySelf: false, emitEvent: true})` - re-validate this input
 2. `markAsDirty()` - when it's invalid. Why do this? It will remove `pristine` status of this input. I use this to control the display of error, and ensure the error is only shown when it's touched or the form is submitted. 
