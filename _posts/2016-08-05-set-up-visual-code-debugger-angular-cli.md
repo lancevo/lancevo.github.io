@@ -8,7 +8,7 @@ tags: angular2
 published: true
 ---
 
-To set up debugger in Visual Code, the debugger must be configured to attach to a node process in `launch.json` (`⌘ + Shift + D` to open Debugger).
+To set up debugger in Visual Code, the debugger must be configured to attach to a node process in `launch.json`  ( `⌘ + Shift + D` to open Debugger).
 
 ```json
 {
