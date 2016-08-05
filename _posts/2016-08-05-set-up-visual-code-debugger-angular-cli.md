@@ -2,7 +2,7 @@
 layout: post
 title:  "Set up Visual Code debugger for Angular CLI"
 date:   2016-08-05 16:18:00
-categories: angular2
+categories: Angular
 tags: angular2
 #image:
 published: true

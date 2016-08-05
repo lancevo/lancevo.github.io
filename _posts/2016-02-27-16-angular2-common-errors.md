@@ -2,7 +2,7 @@
 layout: post
 title:  "Angular 2 Common Errors"
 date:   2016-02-27 06:00:00
-categories: angular2
+categories: Angular
 tags: angular2
 #image:
 published: true

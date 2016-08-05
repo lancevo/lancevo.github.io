@@ -1,22 +1,14 @@
 ---
 layout: post
-title:  "jQuery Validation addMethod()"
+title:  "Custom validation for jQuery Validation"
 date:   2015-01-29 12:34:25
-categories:
+categories: Javascript
 tags: jquery-validation
 #image:
 published: true
 ---
 
-I wrote a few jQuery plugins for form validation in the past, most of them provided the same functions, and varied a bit depends on the projects.
-jQuery validation covers many of the common usages, for anything else there's an addMethod() to provide my own form validation.
-
-
-#custom validation with addMethod()
-
-In a project, I have an input form to make sure the user enters his/her retirement age must be greater than his current age.
-
-[See addMethod notation](http://jqueryvalidation.org/jQuery.validator.addMethod/).
+jQuery Validation - a form validation plug-in covers many common validations. There are times, a project requires a custom validation, it can be easily to extend with [`addMethod()`]((http://jqueryvalidation.org/jQuery.validator.addMethod/).
 
 [Demo](http://jsbin.com/covawaboxi/1/edit?html,js,output)
 

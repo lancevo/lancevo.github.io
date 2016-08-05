@@ -1,30 +1,29 @@
 ---
 layout: post
-title:  "Angular 2 Oh My Forms!"
+title:  "Angular 2 - Oh My Forms!"
 date:   2016-08-02 14:05:00
-categories: angular2
+categories: Angular
 tags: angular2
 #image:
 published: true
 ---
+Form is complex with all the business rules. Below is a few things that I ran into while coding Angular 2 rc 4, if you know a better solution, please let know.    
 
-Below is a list of things that I ran into with form while using Angular 2 Release Candidate 4. 
-There are things that you may find obvious, but not documented any on official angular documents make it difficult.
-
-I have a form allow user to enter information such as age, etc... In the form, it allows user to enter an age either in `input[type=text]`
+I have a form allows user to enter information such as age, name, etc.. One of the fields is age, user can enter either in `input[type=text]`
 or `input[type=range]`. There are several requirements:
 
 1. As user making changes to one input, it will updates another. 
-2. It's required. The age has to be in the range of 50 to 90.
-3. If submit button is clicked, it must validates all inputs, and show errors if necessary.
+2. It's a required field.
+3. The age has to be in the range of 50 to 90.
+4. If submit button is clicked, it must validates all inputs, and show errors if necessary.
   
-Simple enough? Let's go!
 
-2-Way Binding - Range Slider Input
-==================================
+2-Way Binding
+=============
 
-By default `ngModel` is a 1 way binding, so it has to be set to 2-way binding as `[(ngModel)]`. Also, `age` model has to be
-assigned to `value` attribute on each `input` to update the value as `age` is changed.
+By default `ngModel` is a 1 way binding, to share the value in both fields (text & slider), 
+it has to be set 2-way binding `[(ngModel)]`. Also, attribute `value` is set to `age` model, 
+so it's updated automatically by Angular.
 
 ```html
 <form [formGroup]="myForm" (submit)="onSubmit($event, myForm.value)">
@@ -44,7 +43,10 @@ export class App {
 Form Validators 
 ===============
 
-A custom validator is needed, to ensure user enters an age between 50 and 90. I created a [gist](https://gist.github.com/lancevo/bedaec7c7dfbecd9cb37544e85038553) for this validator. It's a higher-order function and returns `ValidatorFn` type. If it's passed, it returns `null`, otherwise it returns an object with error name and its details.
+Angular has several built in form Validators, and `Validators.required` is one of them. I need to write custom validator 
+to validate a range of numbers, which I created a numberRange validator [(gist)](https://gist.github.com/lancevo/bedaec7c7dfbecd9cb37544e85038553) . 
+It's a higher-order function and returns `ValidatorFn` type. If validation is passed, it returns `null`, 
+otherwise it returns an object with error name and its details.
 
 ```ts
 export class App {
@@ -81,9 +83,9 @@ export class App {
 ```
 
 ### Is there a way to validate all inputs? 
-When the form is submitted, all inputs must re-validated. I couldn't find a convenient method in `FormGroup` or `FormBuilder` to do this. However, there's a way to get around it with `FormControl`.
+When the form is submitted, all inputs must be re-validated. I couldn't find a convenient method in `FormGroup` or `FormBuilder` to do this. However, there's a way to get around it with `FormControl` methods:
 
-1. `updateValueAndValidity({onlySelf: false, emitEvent: true})` - re-validate this input
+1. `updateValueAndValidity({onlySelf: false, emitEvent: true})` - re-validate this input, trigger the event to parent form.
 2. `markAsDirty()` - when it's invalid. Why do this? It will remove `pristine` status of this input. I use this to control the display of error, and ensure the error is only shown when it's touched or the form is submitted. 
 
 

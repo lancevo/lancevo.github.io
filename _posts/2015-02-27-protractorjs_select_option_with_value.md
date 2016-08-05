@@ -2,8 +2,8 @@
 layout: post
 title:  "protractorjs: select option with a value"
 date:   2015-02-27 13:57:05
-categories:
-tags: angularjs, protractorjs
+categories: Angular
+tags: angularjs
 #image:
 published: true
 ---
