@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Angular 2 Oh My Forms!"
-date:   2016-02-27 06:00:00
+date:   2016-08-02 14:05:00
 categories: angular2
 tags: angular2
 #image:
