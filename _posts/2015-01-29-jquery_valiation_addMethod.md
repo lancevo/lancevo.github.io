@@ -2,7 +2,7 @@
 layout: post
 title:  "Custom validation for jQuery Validation"
 date:   2015-01-29 12:34:25
-categories: Javascript
+categories: Dev-Misc
 tags: jquery-validation
 #image:
 published: true

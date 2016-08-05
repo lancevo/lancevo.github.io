@@ -2,7 +2,7 @@
 layout: post
 title:  "Old svn package for Mac"
 date:   2015-05-28 12:18:00
-categories: "Front End Development"
+categories: Dev-Misc
 tags: svn, webstorm
 published: true
 image: 

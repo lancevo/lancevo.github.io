@@ -2,7 +2,7 @@
 layout: post
 title:  "Number.prototype.toLocaleString() : a very helpful little method"
 date:   2015-03-12 17:04:00
-categories: "Front End Development"
+categories: Dev-Misc
 tags: Javascript
 #image:
 published: true
