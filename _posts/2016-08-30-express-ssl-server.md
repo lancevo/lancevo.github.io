@@ -34,6 +34,7 @@ sudo crontab -e
 ```
 
 Specify any random time, for example Every Monday at 2:30am:
+
 ```bash
 30 2 * * 1 /opt/letsencrypt/letsencrypt-auto renew >> /var/log/le-renew.log
 ```
