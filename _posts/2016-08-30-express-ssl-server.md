@@ -43,7 +43,7 @@ Specify any random time, for example Every Monday at 2:30am:
 
 source: <https://github.com/lancevo/express_ssl_server>  
 
-This setup include CORS, helmet plug-ins. As for the HTTP and HTTPS, don't use 80 and 443, so it doesn't need `sudo` to
+This setup includes CORS, helmet plug-ins. As for the HTTP and HTTPS ports, don't use 80 and 443, so it doesn't need `sudo` to
 run the code, and we will re-route the ports with iptables later.
 
 ```javascript
