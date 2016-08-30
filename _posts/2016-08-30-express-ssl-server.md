@@ -12,7 +12,7 @@ This is a quick and dirty way to set up SSL server for development.
 I'm not a security expert, and will not be held responsible for any damages it may causes. Please let me know
 if any of these poses security risks. 
   
-For a more secure setup, see <https://github.com/Daplie/letsencrypt-express> 
+For a more secure set up, see <https://github.com/Daplie/letsencrypt-express> 
 
 #Request SSL Certs from Let's Encrypt
 
