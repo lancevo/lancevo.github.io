@@ -5,7 +5,7 @@ date:   2016-08-30 19:20:00
 categories: Dev-Misc
 tags: express, ssl
 #image:
-published: false
+published: true
 ---
 
 This is a quick and dirty way to set up SSL server for development. 
