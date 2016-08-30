@@ -102,11 +102,13 @@ sudo iptables-save
 In case you need to delete a PREROUTING, for longer instruction <http://www.cyberciti.biz/faq/how-to-iptables-delete-postrouting-rule/>
 
 List the ROUTING with LINE NUMBER
+
 ```bash
 sudo iptables -t nat -v -L -n --line-number
 ```
 
 Delete a PREROUTING
+
 ```bash
 sudo iptables -t nat -v -L PREROUTING -n --line-number {LINE-NUMBER}
 ```
