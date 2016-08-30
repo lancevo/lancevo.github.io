@@ -16,7 +16,7 @@ For a more secure set up, see <https://github.com/Daplie/letsencrypt-express>
 
 #Request SSL Certs from Let's Encrypt
 
-(Long tutorials)[https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04]
+Ref: <https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04>
 
 ###Install Let's Encrypt Client
 
